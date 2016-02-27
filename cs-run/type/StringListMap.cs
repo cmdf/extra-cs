@@ -13,5 +13,11 @@ namespace cs_run.type
 			this[key].Add(val);
 			return this;
 		}
+
+		// set a value
+		public StringListMap Set(string key, string val) {
+			if (!ContainsKey(key) || !this[key].Contains(val)) return Add(key, val);
+			return this;
+		}
 	}
 }
