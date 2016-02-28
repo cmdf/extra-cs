@@ -44,10 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="code\ArgMap.cs" />
+    <Compile Include="code\ArgType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="type\Arrays.cs" />
-    <Compile Include="type\StringListMap.cs" />
+    <Compile Include="type\ListMap.cs" />
+    <Compile Include="type\Map.cs" />
     <Compile Include="type\Strings.cs" />
   </ItemGroup>
   <ItemGroup>

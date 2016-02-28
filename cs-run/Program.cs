@@ -4,25 +4,29 @@
 // required modules
 using System;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Reflection;
 using System.CodeDom.Compiler;
 using Microsoft.CSharp;
 using cs_run.type;
+using cs_run.code;
 
 namespace cs_run
 {
 	class Program {
 	
 		// constants
-		static readonly string INLINE_SOURCE_BEGIN = "using System; namespace cs_run { public class Program { public static void Main(string[] args) {";
-		static readonly string INLINE_SOURCE_END = "} } }";
+		static readonly string INLINE_SOURCE = "using System; namespace cs_run { public class Program { public static void Main(string[] args) { %i; } } }";
 
 		// run the code
 		public static void Main(string[] args) {
-			StringListMap argm = GetArgs(Arrays.StringShift(Strings.Split(Environment.CommandLine)));
+			args = Arrays<string>.Shift(Strings.Split(Environment.CommandLine));
+			if(args.Length <= 0) { Console.WriteLine(GetHelp()); return; }
+      ListMap<string> argm = new ArgMap(GetOptionTypes(), args);
+			if(argm.ContainsKey("_invalid")) { Console.WriteLine(GetInvalidOptions(argm)); return; }
       argm.Set("-r", "System.dll").Set("-r", "System.Core.dll").Set("-r", "Microsoft.CSharp.dll");
+			string[] sources = GetSources(argm);
+			if(sources == null || sources.Length == 0) { Console.WriteLine(""); return; }
 			CompilerResults res = Compile(argm["-r"].ToArray(), GetSources(argm));
 			try { if (res != null) RunCode(res, GetCallArgs(argm)); }
 			catch (Exception e) { Console.WriteLine(e.ToString() + "\n" + e.StackTrace); }
@@ -66,34 +70,44 @@ namespace cs_run
 		}
 
 		// get sources
-		static string[] GetSources(StringListMap args) {
+		static string[] GetSources(ListMap<string> args) {
+			string[] o = null;
 			if (args.ContainsKey("")) {
-				string argv = String.Join(" ", args[""].ToArray());
-				if (args.ContainsKey("-c")) return new string[] { argv };
-				else if (args.ContainsKey("-s")) return new string[] { INLINE_SOURCE_BEGIN + argv + INLINE_SOURCE_END };
-				else return new string[] { INLINE_SOURCE_BEGIN + "Console.WriteLine(" + argv + ");" + INLINE_SOURCE_END };
+				o = new string[] { String.Join(" ", args[""].ToArray()) };
+				if (args.ContainsKey("-s")) o[0] = INLINE_SOURCE.Replace("%i", o[0]);
+				else if (!args.ContainsKey("-c")) o[0] = INLINE_SOURCE.Replace("%i", "Console.WriteLine(" + o[0] + ")");
 			}
-			string[] o = args["-i"].ToArray();
-			for (int i = 0; i < o.Length; i++)
-				o[i] = File.ReadAllText(o[i]);
+			else if (args.ContainsKey("-i")) {
+				o = args["-i"].ToArray();
+				for (int i = 0; i < o.Length; i++)
+					o[i] = File.ReadAllText(o[i]);
+			}
 			return o;
 		}
 
 		// get call arguments
-		static string[] GetCallArgs(StringListMap args) {
-			return Strings.SplitQuoted(args.ContainsKey("-a") ? args["-a"].Last() : "\"\"");
+		static string[] GetCallArgs(ListMap<string> args) {
+			return args.ContainsKey("-a")? args["-a"].ToArray() : new string[0];
 		}
 
-		// get arguments to program
-		static StringListMap GetArgs(string[] args) {
-			string opt = "";
-			StringListMap o = new StringListMap();
-			for (int i = 0; i < args.Length; i++) {
-				if (!args[i].StartsWith("-")) { o.Add(opt, args[i]); opt = ""; continue; }
-				if (opt != "") o.Add(opt, "");
-				opt = args[i];
-			}
-			return o;
+		// get invalid option details
+		static string GetInvalidOptions(ListMap<string> args) {
+			StringBuilder str = new StringBuilder("invalid option(s): ");
+			foreach (string opt in args["_invalid"])
+				str.Append(opt).Append(' ');
+			return str.ToString();
+		}
+
+		// get option types
+		static Map<ArgType> GetOptionTypes() {
+			return new Map<ArgType>() {
+				{ "-r", ArgType.NORMAL },
+				{ "-a", ArgType.NORMAL },
+				{ "-i", ArgType.NORMAL },
+				{ "-c", ArgType.EXTENDED },
+				{ "-s", ArgType.EXTENDED },
+				{ "-f", ArgType.EXTENDED }
+			};
 		}
 
 		// return help string

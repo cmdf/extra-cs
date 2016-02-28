@@ -1,18 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* ARRAYS - defines basic array functions */
+using System;
+
 
 namespace cs_run.type
 {
-	class Arrays {
+	class Arrays<T> {
 
 		// shift elements up one level
-		public static string[] StringShift(string[] src, int amt=1) {
+		public static T[] Shift(T[] src, int amt=1) {
 			amt = amt < src.Length ? amt : src.Length;
-			string[] dst = new string[src.Length - 1];
-			Array.Copy(src, 1, dst, 0, dst.Length);
+			T[] dst = new T[src.Length - amt];
+			Array.Copy(src, amt, dst, 0, dst.Length);
 			return dst;
 		}
 	}
