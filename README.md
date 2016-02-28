@@ -45,7 +45,7 @@ cs-run [-r <references>] [-a <arguments>] [-i <input source file>]... [-c / -s /
 -i : Specify an input source file (e.g. -i Program.cs)
      (atleast one of the input files must have a Main(), or nothing will be executed)
 -c : Specify entire source code to be executed as parameters
-     (e.g. -s using System; namespace test { class Program { public static void Main(string[] args) { Console.WriteLine("Hello World!") } } })
+     (e.g. -c using System; namespace test { class Program { public static void Main(string[] args) { Console.WriteLine("Hello World!") } } })
 -s : Specify a statement to be executed as parameters
      (e.g. -s Console.WriteLine("Hello Statement!");)
 -f : Specify a function to be executed as parameters (this is default option)
