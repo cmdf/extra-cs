@@ -23,7 +23,7 @@ cs-run DateTime.Now
 
 * Linux-like Clear Screen
 ```batch
-cs-run -s Console.SetCursorPosition(0, Console.CursorTop+24); Console.SetCursorPosition(0, Console.CursorTop-23)
+cs-run -s Console.SetCursorPosition(0, Console.CursorTop+24); Console.SetCursorPosition(0, Console.CursorTop-23);
 : (screen cleared)
 ```
 
