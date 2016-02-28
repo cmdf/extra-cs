@@ -120,7 +120,7 @@ namespace cs_run
 			str.Append("-i : Specify an input source file (e.g. -i Program.cs)\n");
 			str.Append("     (atleast one of the input files must have a Main(), or nothing will be executed)\n");
 			str.Append("-c : Specify entire source code to be executed as parameters\n");
-			str.Append("     (e.g. -s using System; namespace test { class Program { public static void Main(string[] args) { Console.WriteLine(\"Hello World!\") } } })\n");
+			str.Append("     (e.g. -c using System; namespace test { class Program { public static void Main(string[] args) { Console.WriteLine(\"Hello World!\") } } })\n");
 			str.Append("-s : Specify a statement to be executed as parameters\n");
 			str.Append("     (e.g. -s Console.WriteLine(\"Hello Statement!\");)\n");
 			str.Append("-f : Specify a function to be executed as parameters (this is default option)\n");
