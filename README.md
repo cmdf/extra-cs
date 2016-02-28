@@ -62,7 +62,7 @@ for all necessary purposes.
 
 ## thanks
 
-People at [Stack Overflow] for a lot of QAs <br>
+[Stack Overflow](http://stackoverflow.com) for a lot of QAs <br>
 [0](http://stackoverflow.com/questions/19436244/how-to-reference-an-unused-parameter)
 [1](http://stackoverflow.com/questions/17047602/proper-way-to-initialize-a-c-sharp-dictionary-with-values-already-in-it)
 [2](http://stackoverflow.com/questions/473782/inline-functions-in-c)
