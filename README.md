@@ -6,7 +6,7 @@ a *batch file*.
 
 ## usage
 
-- Download [cs-run](#).
+- Download [cs-run](https://github.com/0rez/cs-run/releases/download/v0.1.15/cs-run.exe).
 - Drop it in your *directory*.
 - If you want it to be usable from **anywhere**, add its path to the `PATH` *environment variable*.
 - Start a *command prompt* in the **same** *directory*.
