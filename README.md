@@ -95,27 +95,28 @@ for all necessary purposes.
 [29](http://stackoverflow.com/questions/826398/is-it-possible-to-dynamically-compile-and-execute-c-sharp-code-fragments)
 [30](http://stackoverflow.com/questions/4800267/how-to-execute-code-that-is-in-a-string)
 
-[Microsoft MSDN](https://msdn.microsoft.com) for the huge support in every direction <br>
+[Microsoft MSDN](https://msdn.microsoft.com)
 [0](https://msdn.microsoft.com/en-us/library/dd264739.aspx)
 [1](https://msdn.microsoft.com/en-us/library/ms228504.aspx)
 [2](https://msdn.microsoft.com/en-us/library/z5z9kes2.aspx)
 [3](https://msdn.microsoft.com/en-us/library/bb384043.aspx)
 [4](https://msdn.microsoft.com/en-IN/library/bb397687.aspx)
-
-[Simeon Pilgrim](http://simeonpilgrim.com) for article on Compiling and Running code at runtime <br>
+for the huge support in every direction <br>
+[Simeon Pilgrim](http://simeonpilgrim.com)
 [0](http://simeonpilgrim.com/blog/2007/12/04/compiling-and-running-code-at-runtime/)
-
-[Microsoft Support](https://support.microsoft.com) for article on How to programmatically compile code using C# compiler <br>
+for article on Compiling and Running code at runtime <br>
+[Microsoft Support](https://support.microsoft.com)
 [0](https://support.microsoft.com/en-us/kb/304655)
-
-[Bytes.com](https://bytes.com) for QA on Easy way to cast an array of strings to an array of objects <br>
+for article on How to programmatically compile code using C# compiler <br>
+[Bytes.com](https://bytes.com)
 [0](https://bytes.com/topic/c-sharp/answers/275646-easy-way-cast-array-strings-array-objects)
-
-[Dejan Geci](http://headsigned.com/) for his article on C# scripting example using CSharpCodeProvider <br>
+for QA on Easy way to cast an array of strings to an array of objects <br>
+[Dejan Geci](http://headsigned.com/)
 [0](http://headsigned.com/article/csharp-scripting-example-using-csharpcodeprovider)
-
-[Sanjay Legha](http://sanjaylegha.blogspot.in/) for his blog on C# code compilation <br>
+for his article on C# scripting example using CSharpCodeProvider <br>
+[Sanjay Legha](http://sanjaylegha.blogspot.in/)
 [0](http://paxcel.net/blog/how-to-programmatically-compile-and-use-code-using-c-compiler/)
-
-[Simon Schmid](https://github.com/sschmid) for logo (have not used it yet!) <br>
+for his blog on C# code compilation <br>
+[Simon Schmid](https://github.com/sschmid)
 [0](https://raw.githubusercontent.com/sschmid/Entitas-CSharp/develop/Readme/Images/csharp.png)
+for logo (have not used it yet!) <br>
