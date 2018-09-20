@@ -118,3 +118,4 @@ for his blog on C# code compilation <br>
 [Simon Schmid](https://github.com/sschmid)
 [0](https://raw.githubusercontent.com/sschmid/Entitas-CSharp/develop/Readme/Images/csharp.png)
 for logo (have not used it yet!) <br>
+/* thanks Simeon!: http://simeonpilgrim.com/blog/2007/12/04/compiling-and-running-code-at-runtime/ */
