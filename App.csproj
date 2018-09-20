@@ -7,8 +7,8 @@
     <ProjectGuid>{1E5A08BA-B8CE-4030-9F3C-D656C175D8EF}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>cs_run</RootNamespace>
-    <AssemblyName>cs-run</AssemblyName>
+    <RootNamespace>App</RootNamespace>
+    <AssemblyName>ecs</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

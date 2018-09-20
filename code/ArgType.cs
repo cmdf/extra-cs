@@ -1,7 +1,7 @@
 ﻿/* ARGTYPE - defines argument option type */
 
 
-namespace cs_run.code {
+namespace App.code {
 
 	public enum ArgType {
 		ZERO,

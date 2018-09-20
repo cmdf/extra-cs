@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace cs_run.type
+namespace App.type
 {
 	class Map<T> : Dictionary<string, T> { }
 }

@@ -8,15 +8,15 @@ using System.Text;
 using System.Reflection;
 using System.CodeDom.Compiler;
 using Microsoft.CSharp;
-using cs_run.type;
-using cs_run.code;
+using App.type;
+using App.code;
 
-namespace cs_run
+namespace App
 {
 	class Program {
 	
 		// constants
-		static readonly string INLINE_SOURCE = "using System; namespace cs_run { public class Program { public static void Main(string[] args) { %i; } } }";
+		static readonly string INLINE_SOURCE = "using System; namespace App { public class Program { public static void Main(string[] args) { %i; } } }";
 
 		// run the code
 		public static void Main(string[] args) {

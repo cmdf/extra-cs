@@ -2,7 +2,7 @@
 using System;
 
 
-namespace cs_run.type
+namespace App.type
 {
 	class Arrays<T> {
 

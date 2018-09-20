@@ -1,5 +1,3 @@
-# cs-run
-
 Use this program to run any **C# command** from the *command prompt* or from
 a *batch file*.
 

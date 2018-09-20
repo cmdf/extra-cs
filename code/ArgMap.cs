@@ -1,7 +1,7 @@
 ﻿/* ARGMAP - defines an argument map */
-using cs_run.type;
+using App.type;
 
-namespace cs_run.code
+namespace App.code
 {
 	class ArgMap : ListMap<string> {
 		
