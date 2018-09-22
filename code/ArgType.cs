@@ -3,9 +3,9 @@
 
 namespace App.code {
 
-	public enum ArgType {
-		ZERO,
-		NORMAL,
-		EXTENDED
-	}
+  public enum ArgType {
+    ZERO,
+    NORMAL,
+    EXTENDED
+  }
 }

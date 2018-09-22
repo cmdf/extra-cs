@@ -1,54 +1,40 @@
-Use this program to run any **C# command** from the *command prompt* or from
-a *batch file*.
+Run C# command from console.
+> 1. Download [exe file](https://github.com/winp/extra-bel/releases/download/1.0.0/ebel.cmd).
+> 2. Copy to `C:\Program_Files\Scripts`.
+> 3. Add `C:\Program_Files\Scripts` to `PATH` environment variable.
 
 
-## usage
+```
+ecs [-r <references>] [-a <arguments>] [-i <input source file>]... [-c / -s / -f] <code>
+:: -r : Add necessary references (e.g. -r System.Data.dll)
+::      (System.dll, System.Core.dll and Microsoft.CSharp.dll are included by default)
+:: -a : Arguments to pass to Main() function (e.g. -a (10 2))
+::      (must be enclosed using paranthesis)
+:: -i : Specify an input source file (e.g. -i Program.cs)
+::      (atleast one of the input files must have a Main(), or nothing will be executed)
+:: -c : Specify entire source code to be executed as parameters
+::      (e.g. -c using System; namespace test { class Program { public static void Main(string[] args) { Console.WriteLine("Hello World!") } } })
+:: -s : Specify a statement to be executed as parameters
+::      (e.g. -s Console.WriteLine("Hello Statement!");)
+:: -f : Specify a function to be executed as parameters (this is default option)
+::      (e.g. -f DateTime.Now)
+```
 
-- Download [cs-run](https://github.com/0rez/cs-run/releases/download/v0.1.15/cs-run.exe).
-- Drop it in your *directory*.
-- If you want it to be usable from **anywhere**, add its path to the `PATH` *environment variable*.
-- Start a *command prompt* in the **same** *directory*.
-- Follow the [examples](#examples) or the [reference](#reference).
-
-
-## examples
-
-* Get Date and Time
 ```batch
-cs-run DateTime.Now
+:: Get Date and Time
+ecs DateTime.Now
 : 28/2/2016 10:26:31 PM
-```
 
-* Linux-like Clear Screen
-```batch
-cs-run -s Console.SetCursorPosition(0, Console.CursorTop+24); Console.SetCursorPosition(0, Console.CursorTop-23);
+:: Linux-like Clear Screen
+ecs -s Console.SetCursorPosition(0, Console.CursorTop+24); Console.SetCursorPosition(0, Console.CursorTop-23);
 : (screen cleared)
-```
 
-* Message Box
-```batch
-cs-run -r System.Windows.Forms.dll -s System.Windows.Forms.MessageBox.Show("Something Happened!", "Close")
+:: Message Box
+ecs -r System.Windows.Forms.dll -s System.Windows.Forms.MessageBox.Show("Something Happened!", "Close")
 : (a message box appears)
 ```
 
 
-## reference
-
-```
-cs-run [-r <references>] [-a <arguments>] [-i <input source file>]... [-c / -s / -f] <code>
--r : Add necessary references (e.g. -r System.Data.dll)
-     (System.dll, System.Core.dll and Microsoft.CSharp.dll are included by default)
--a : Arguments to pass to Main() function (e.g. -a (10 2))
-     (must be enclosed using paranthesis)
--i : Specify an input source file (e.g. -i Program.cs)
-     (atleast one of the input files must have a Main(), or nothing will be executed)
--c : Specify entire source code to be executed as parameters
-     (e.g. -c using System; namespace test { class Program { public static void Main(string[] args) { Console.WriteLine("Hello World!") } } })
--s : Specify a statement to be executed as parameters
-     (e.g. -s Console.WriteLine("Hello Statement!");)
--f : Specify a function to be executed as parameters (this is default option)
-     (e.g. -f DateTime.Now)
-```
 
 
 ## objective

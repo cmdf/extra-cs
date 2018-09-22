@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 
 
-namespace App.type
-{
-	class Map<T> : Dictionary<string, T> { }
+namespace App.type {
+  class Map<T> : Dictionary<string, T> { }
 }
