@@ -1,5 +1,5 @@
 Run C# command from console.
-> 1. Download [exe file](https://github.com/winp/extra-cs/releases/download/1.0.0/ecs.exe).
+> 1. Download [exe file](https://github.com/cmdf/extra-cs/releases/download/1.0.0/ecs.exe).
 > 2. Copy to `C:\Program_Files\Scripts`.
 > 3. Add `C:\Program_Files\Scripts` to `PATH` environment variable.
 
@@ -35,5 +35,5 @@ ecs -r System.Windows.Forms.dll -s System.Windows.Forms.MessageBox.Show("Somethi
 ```
 
 
-[![Merferry](https://i.imgur.com/xTvqw9i.jpg)](https://merfery.github.io)
+[![cmdf](https://i.imgur.com/xTvqw9i.jpg)](https://cmdf.github.io)
 > References: [compiling and running code at runtime](http://simeonpilgrim.com/blog/2007/12/04/compiling-and-running-code-at-runtime/).
